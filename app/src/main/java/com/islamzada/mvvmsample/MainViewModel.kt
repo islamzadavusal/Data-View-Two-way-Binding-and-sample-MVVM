@@ -13,7 +13,7 @@ class MainViewModel: ViewModel() {
 
     private val productList = mutableListOf<Product>()
 
-    fun addList(){
+    fun addProduct(){
         productList.add(Product(productName.value.toString(),productCode.value.toString(),productDescription.value.toString()))
         productList.forEach{it-> println(it)}
 
