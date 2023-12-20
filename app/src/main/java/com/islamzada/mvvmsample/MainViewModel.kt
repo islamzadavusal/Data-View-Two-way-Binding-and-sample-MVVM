@@ -9,6 +9,8 @@ class MainViewModel: ViewModel() {
     var productCode = MutableLiveData<String>()
     var productDescription = MutableLiveData<String>()
 
+    var buttonClick = MutableLiveData<Boolean>()
+
     var result  = MutableLiveData<String>()
 
     private val productList = mutableListOf<Product>()
@@ -18,6 +20,11 @@ class MainViewModel: ViewModel() {
         productList.forEach{it-> println(it)}
 
         result.postValue("${productName.value} ${productCode.value} ${productDescription.value}")
+    }
+
+    fun onClick(){
+        buttonClick.postValue(true)
+        addProduct()
     }
 
 }

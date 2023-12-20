@@ -22,10 +22,15 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
 
-        binding.button.setOnClickListener {
-            viewModel.addProduct()
+//        binding.button.setOnClickListener {
+//            viewModel.addProduct()
+
+            viewModel.buttonClick.observe(this) {
+                if (it) {
+                   println(viewModel.result)
+                }
+            }
 
 
-        }
     }
 }
